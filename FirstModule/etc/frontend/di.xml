@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--   Preferences are default settings [ for color, size, etc ] -->
+    <preference for="Magciu\FirstModule\NotMagento\PencilInterface"
+                type="Magciu\FirstModule\NotMagento\BigPencil" />
+
+    <preference for="Magento\Catalog\Api\ProductRepositoryInterface"
+                type="Magciu\FirstModule\Model\CustomImplementation" />
+
+    <preference for="Magciu\FirstModule\Api\PencilInterface"
+                type="Magciu\FirstModule\Model\Pencil" />
+
+    <preference for="Magciu\FirstModule\Api\Color"
+                type="Magciu\FirstModule\Model\Color\Yellow" />
+
+    <preference for="Magciu\FirstModule\Api\Size"
+                type="Magciu\FirstModule\Model\Size\Normal" />
+
+    <preference for="Magciu\FirstModule\Api\Brightness"
+                type="Magciu\FirstModule\Model\Brightness\Medium" />
+
+    <type name="Magciu\FirstModule\Model\Pencil">
+        <arguments>
+            <argument name="color" xsi:type="object">virtualType</argument>
+            <argument name="size" xsi:type="object">Magciu\FirstModule\Model\Size\Big</argument>
+        </arguments>
+    </type>
+
+<!--    with this virtualType we extend the Yellow color. Instead of using Yellow, we use a virtualType-->
+    <virtualType name="virtualType" type="Magciu\FirstModule\Model\Color\Yellow">
+        <arguments>
+            <argument name="brightness" xsi:type="object">Magciu\FirstModule\Model\Brightness\High</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magciu\FirstModule\Model\Student">
+        <arguments>
+            <argument name="name" xsi:type="string">Bob</argument>
+            <argument name="age" xsi:type="number">35</argument>
+            <argument name="scores" xsi:type="array">
+                <item name="maths" xsi:type="number">100</item>
+                <item name="programming" xsi:type="number">99</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
