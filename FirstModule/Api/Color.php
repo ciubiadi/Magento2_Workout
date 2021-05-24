@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Magciu\FirstModule\Api;
+namespace Printq\FirstModule\Api;
 
 
 interface Color

@@ -1,6 +1,6 @@
 <?php
 
-namespace Magciu\FirstModule\NotMagento;
+namespace Printq\FirstModule\NotMagento;
 
 interface PencilInterface
 {

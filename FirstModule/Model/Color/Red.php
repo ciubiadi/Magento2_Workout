@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Magciu\FirstModule\Model\Color;
+namespace Printq\FirstModule\Model\Color;
 
 
-use Magciu\FirstModule\Api\Brightness;
-use Magciu\FirstModule\Api\Color;
+use Printq\FirstModule\Api\Brightness;
+use Printq\FirstModule\Api\Color;
 
 class Red implements  Color
 {

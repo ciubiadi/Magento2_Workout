@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Magciu\FirstModule\Model\Size;
+namespace Printq\FirstModule\Model\Size;
 
 
-use Magciu\FirstModule\Api\Size;
+use Printq\FirstModule\Api\Size;
 
 class Big implements  Size
 {

@@ -1,39 +1,39 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 <!--   Preferences are default settings [ for color, size, etc ] -->
-    <preference for="Magciu\FirstModule\NotMagento\PencilInterface"
-                type="Magciu\FirstModule\NotMagento\BigPencil" />
+    <preference for="Printq\FirstModule\NotMagento\PencilInterface"
+                type="Printq\FirstModule\NotMagento\BigPencil" />
 
     <preference for="Magento\Catalog\Api\ProductRepositoryInterface"
-                type="Magciu\FirstModule\Model\CustomImplementation" />
+                type="Printq\FirstModule\Model\CustomImplementation" />
 
-    <preference for="Magciu\FirstModule\Api\PencilInterface"
-                type="Magciu\FirstModule\Model\Pencil" />
+    <preference for="Printq\FirstModule\Api\PencilInterface"
+                type="Printq\FirstModule\Model\Pencil" />
 
-    <preference for="Magciu\FirstModule\Api\Color"
-                type="Magciu\FirstModule\Model\Color\Yellow" />
+    <preference for="Printq\FirstModule\Api\Color"
+                type="Printq\FirstModule\Model\Color\Yellow" />
 
-    <preference for="Magciu\FirstModule\Api\Size"
-                type="Magciu\FirstModule\Model\Size\Normal" />
+    <preference for="Printq\FirstModule\Api\Size"
+                type="Printq\FirstModule\Model\Size\Normal" />
 
-    <preference for="Magciu\FirstModule\Api\Brightness"
-                type="Magciu\FirstModule\Model\Brightness\Medium" />
+    <preference for="Printq\FirstModule\Api\Brightness"
+                type="Printq\FirstModule\Model\Brightness\Medium" />
 
-    <type name="Magciu\FirstModule\Model\Pencil">
+    <type name="Printq\FirstModule\Model\Pencil">
         <arguments>
             <argument name="color" xsi:type="object">virtualType</argument>
-            <argument name="size" xsi:type="object">Magciu\FirstModule\Model\Size\Big</argument>
+            <argument name="size" xsi:type="object">Printq\FirstModule\Model\Size\Big</argument>
         </arguments>
     </type>
 
 <!--    with this virtualType we extend the Yellow color. Instead of using Yellow, we use a virtualType-->
-    <virtualType name="virtualType" type="Magciu\FirstModule\Model\Color\Yellow">
+    <virtualType name="virtualType" type="Printq\FirstModule\Model\Color\Yellow">
         <arguments>
-            <argument name="brightness" xsi:type="object">Magciu\FirstModule\Model\Brightness\High</argument>
+            <argument name="brightness" xsi:type="object">Printq\FirstModule\Model\Brightness\High</argument>
         </arguments>
     </virtualType>
 
-    <type name="Magciu\FirstModule\Model\Student">
+    <type name="Printq\FirstModule\Model\Student">
         <arguments>
             <argument name="name" xsi:type="string">Bob</argument>
             <argument name="age" xsi:type="number">35</argument>
@@ -42,5 +42,23 @@
                 <item name="programming" xsi:type="number">99</item>
             </argument>
         </arguments>
+    </type>
+
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="before_set_name_plugin"
+                type="Printq\FirstModule\Plugin\ProductSolution"
+                sortOrder="10" />
+    </type>
+
+    <type name="Printq\FirstModule\Controller\FirstController\Index">
+        <plugin name="plugin_on_execute"
+                type="Printq\FirstModule\Plugin\ProductSolution"
+                sortOrder="10" disabled="true"/>
+        <plugin name="plugin2_on_execute"
+                type="Printq\FirstModule\Plugin\PluginSolution2"
+                sortOrder="20" disabled="true"/>
+        <plugin name="plugin3_on_execute"
+                type="Printq\FirstModule\Plugin\PluginSolution3"
+                sortOrder="30" disabled="true"/>
     </type>
 </config>

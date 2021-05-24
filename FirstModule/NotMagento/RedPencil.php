@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Magciu\FirstModule\NotMagento;
+namespace Printq\FirstModule\NotMagento;
 
 
 class RedPencil implements PencilInterface

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Magciu\FirstModule\Model;
+namespace Printq\FirstModule\Model;
 
 use Magento\Catalog\Api\ProductRepositoryInterface;
 

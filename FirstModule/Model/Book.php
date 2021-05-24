@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Magciu\FirstModule\Model;
+namespace Printq\FirstModule\Model;
 
-use Magciu\FirstModule\Api\Color;
-use Magciu\FirstModule\Api\Size;
+use Printq\FirstModule\Api\Color;
+use Printq\FirstModule\Api\Size;
 
 class Book
 {

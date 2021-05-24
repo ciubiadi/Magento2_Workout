@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Magciu\FirstModule\Model\Brightness;
+namespace Printq\FirstModule\Model\Brightness;
 
 
-use Magciu\FirstModule\Api\Brightness;
+use Printq\FirstModule\Api\Brightness;
 
 class Low implements Brightness
 {

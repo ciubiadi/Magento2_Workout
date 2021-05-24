@@ -10,6 +10,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Magciu_FirstModule',
+    'Printq_FirstModule',
     __DIR__
 );
